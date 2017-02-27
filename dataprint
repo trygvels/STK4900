@@ -1,0 +1,69 @@
+
+> summary(blood)
+     blodtr          alder  
+ Min.   :104.0   Min.   :1  
+ 1st Qu.:117.5   1st Qu.:1  
+ Median :136.0   Median :2  
+ Mean   :138.8   Mean   :2  
+ 3rd Qu.:156.2   3rd Qu.:3  
+ Max.   :214.0   Max.   :3  
+
+
+> summary(no2data)
+      no2           log.cars          temp            wind.speed   
+ Min.   :1.224   Min.   :4.127   Min.   :-18.6000   Min.   :0.300  
+ 1st Qu.:3.214   1st Qu.:6.176   1st Qu.: -3.9000   1st Qu.:1.675  
+ Median :3.848   Median :7.425   Median :  1.1000   Median :2.800  
+ Mean   :3.698   Mean   :6.973   Mean   :  0.8474   Mean   :3.056  
+ 3rd Qu.:4.217   3rd Qu.:7.793   3rd Qu.:  4.9000   3rd Qu.:4.200  
+ Max.   :6.395   Max.   :8.349   Max.   : 21.1000   Max.   :9.900  
+  hour.of.day   
+ Min.   : 1.00  
+ 1st Qu.: 6.00  
+ Median :12.50  
+ Mean   :12.38  
+ 3rd Qu.:18.00  
+ Max.   :24.00  
+
+
+
+LINEAR FIT no2 and log.cars
+
+ lm(formula = no2 ~ log.cars, data = no2data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.18822 -0.40071  0.06428  0.40362  2.48472 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.23310    0.18755   6.575 1.23e-10 ***
+log.cars     0.35353    0.02657  13.303  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6454 on 498 degrees of freedom
+Multiple R-squared:  0.2622,	Adjusted R-squared:  0.2607 
+F-statistic:   177 on 1 and 498 DF,  p-value: < 2.2e-16
+
+--------------------------
+EXERCISE 2
+
+BLOOD GROUP SUMMARY
+> summary(grp1$blodtr)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  104.0   112.0   117.0   122.2   129.0   160.0 
+> summary(grp2$blodtr)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  108.0   121.5   137.0   139.1   157.8   174.0 
+> summary(grp3$blodtr)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  110.0   138.0   148.0   155.2   164.0   214.0 
+
+  BLOOD GROUP ANOVA
+  > summary(aov.blood)
+            Df Sum Sq Mean Sq F value  Pr(>F)   
+alder        2   6535    3268   6.469 0.00426 **
+Residuals   33  16670     505                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
