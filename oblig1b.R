@@ -18,7 +18,7 @@ summary(aov.blood)
 
 # ---------------- Oppgave 2 c ----------------
 # Regression model
-linregrmod = lm(blood$blodtr~blood$alder)
-summary(linregrmod)
-plot(linregrmod)
+options(contrasts=c("contr.treatment","contr.poly"))
+lm.sum=lm(blood$blodtr~blood$alder, data=blood)
+summary(lm.sum)
 
